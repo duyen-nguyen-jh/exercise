@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo Exercise" />
+    <meta name="title" content="Demo Exercise" />
+    <title>Demo Exercise</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Raleway:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @font-face {
+        font-family: MyriadPro;
+        src: url("/public/fonts/Myriad-Pro-Regular.ttf");
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heroWrapper">
+      <ul class="header">
+        <li>about</li>
+        <li>product</li>
+        <li>objects</li>
+        <li>contact</li>
+      </ul>
+      <div class="headerWrapper">
+        <i
+          class="fas fa-bars"
+          id="burgerIcon"
+          style="color: #f26522; font-size: x-large; cursor: pointer"
+          onclick="onClickBurger()"
+        ></i>
+        <ul id="toggleHeader">
+          <li>about</li>
+          <li>product</li>
+          <li>objects</li>
+          <li>contact</li>
+        </ul>
+      </div>
+      <div class="heroTextWrapper">
+        <p class="heroMainText">SLEEK AS FKUC</p>
+        <p class="heroSubText desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed perspiciatis
+          corrupti harum, ipsa ut laboriosam blanditiis eum iste beatae rem, saepe
+          quibusdam minus, repellat enim vitae officiis veritatis? Obcaecati, laboriosam.
+        </p>
+        <div class="iconWrapper"></div>
+      </div>
+    </div>
+
+    <div class="brightSection">
+      <div class="contentWrapper">
+        <div class="leftContent">
+          <p class="title">BRIGHT ASS ORANGE</p>
+          <p class="content desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio perferendis,
+            dolor ratione odit unde amet veniam aut et iste sit at ipsam, minima beatae
+            facilis illo doloribus. Vero, dolorum exercitationem.
+            <br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio perferendis,
+            dolor ratione odit unde amet veniam aut et iste sit at ipsam, minima beatae
+            facilis illo doloribus. Vero, dolorum exercitationem.
+          </p>
+        </div>
+        <div class="rightContent">
+          <img src="./public/images/sub-top.jpg" alt="bight ass orange" />
+          <div class="content">
+            <p class="title">FINALY A LAYOUT THAT BLOWS YOUR HEAD OFF</p>
+            <p class="subTitle desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="tweetTooltip">
+              <i class="fab fa-twitter" style="font-size: 1.5rem; color: #d8d8d8"></i>
+              <span style="font-size: 0.75rem; color: #cfcfcf">Tweet this shit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="melbourneIntro">
+      <p class="title">MELBOURNE, AUSTRALIA</p>
+      <div class="content desc">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum dolor dicta
+          voluptate cumque illum, voluptates neque fugit iure repellendus dolorem porro
+          eos cupiditate consequatur temporibus, quasi accusantium nesciunt? Quam, ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+          ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+          nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+          labore et dolore magnam aliquam quaerat voluptatem.
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+          ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+          nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+          labore et dolore magnam aliquam quaerat voluptatem.
+        </p>
+      </div>
+    </div>
+
+    <div class="wordSuchCover">
+      <div class="wordSuchContent">
+        <div class="title">words & such</div>
+        <img src="/public/images/woman.jpg" alt="words&such" />
+      </div>
+    </div>
+
+    <div class="toRightSideWrapper">
+      <div class="wordSuchIntro desc">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum dolor dicta
+          voluptate cumque illum, voluptates neque fugit iure repellendus dolorem porro
+          eos cupiditate consequatur temporibus, quasi accusantium nesciunt? Quam, ipsa.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+          fugiat nulla pariatur.
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+          ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+          nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+          labore et dolore magnam aliquam quaerat voluptatem.
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
+          ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi
+          nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut
+          labore et dolore magnam aliquam quaerat voluptatem.
+        </p>
+      </div>
+
+      <div class="takeActionWrapper">
+        <p class="title">take action</p>
+        <div class="formWrapper">
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Contact Phone" />
+          <input type="text" placeholder="Email" />
+          <button>sign up</button>
+        </div>
+      </div>
+      <img class="takeActionImg" src="/public/images/take-action.jpg" alt="take-action" />
+
+      <div class="lastSection">
+        <div class="contentWrapper">
+          <div class="leftContent">
+            <p class="title">OHH THIS IS NICE</p>
+            <p class="content desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
+              <br />
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+              aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+          <div class="rightContent">
+            <img src="./public/images/footer-near.jpg" alt="footer-near" width="100%" />
+            <div class="content">
+              <p class="title">THE END IS NIGH, WELL THE FOOTER ANYWAYS</p>
+              <p class="subTitle desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="linkWrapper">
+        <ul>
+          <li>quicklinks</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+        </ul>
+        <ul>
+          <li>our profile</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+        </ul>
+        <ul>
+          <li>information</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+        </ul>
+        <ul>
+          <li>courses</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+        </ul>
+        <ul>
+          <li>publication</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+          <li>a footer link</li>
+        </ul>
+      </div>
+      <p class="hiddenText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorum incidunt
+        cumque aspernatur alias facere quos est similique, eius quasi necessitatibus
+        voluptatem iure! Itaque, laboriosam quod repellendus in incidunt fugit?
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
