@@ -187,7 +187,6 @@ body {
   background: url("/public/images/top.jpg") no-repeat fixed center;
   background-size: cover;
   height: var(--hero-height);
-  position: relative;
 
   color: var(--main-font-color);
 }
@@ -218,8 +217,7 @@ body {
   background-color: var(--main-orange);
 }
 .heroTextWrapper {
-  margin-top: 10%;
-  padding-top: 6.5%;
+  padding-top: calc(var(--padding-left) * 2);
   max-width: 32%;
 }
 .heroMainText {
@@ -249,22 +247,30 @@ body {
   top: 0;
   left: 0;
   padding: 60px var(--padding-left) 13px var(--padding-left);
-  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
+.headerBlack {
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.3s linear;
+  box-shadow: -1px 1px 10px gray;
+}
+
 .headerWrapper {
   display: none;
 }
 /* ===icon display=== */
-#transLogo {
-  transform: rotate(90deg);
+#mobileLogo {
   align-self: flex-start;
-  width: 6%;
-  position: absolute;
-  right: 0;
+  transform: rotate(90deg);
+  width: 20%;
 }
-#transLogoHorizontal {
-  display: none;
+
+.transLogoRotate {
+  transform: rotate(90deg);
+  transition: 0.3s linear;
+  position: relative;
+  top: 60px;
+  left: 100px;
 }
 #arrow1 {
   color: var(--main-font-color);
@@ -272,18 +278,14 @@ body {
 #arrow2 {
   color: var(--main-orange);
 }
-.arrowWrapper {
-  position: absolute;
-  display: flex;
-  gap: 0.8rem;
-  bottom: calc(-1 * var(--overlay-part) + 3rem);
-}
+
 .belowTextIcon {
   width: 40%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 /* ----retina screen ------- */
 @media screen and (min-width: 1400px) {
   .heroWrapper {
@@ -317,7 +319,8 @@ body {
   }
   .headerWrapper {
     position: relative;
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
   #toggleHeader {
     position: absolute;
@@ -351,9 +354,8 @@ body {
 
 /* -----------------------JOINED PART NICE SECTION AND BRIGHT SECTION------------------------------------------------ */
 .contentWrapper {
-  width: 80%;
+  width: 70%;
   display: flex;
-  margin-top: var(--overlay-part);
   position: relative;
 }
 .leftContent {
@@ -439,7 +441,7 @@ body {
 
 @media screen and (max-width: 1024px) {
   .contentWrapper {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -474,7 +476,15 @@ body {
 /* ----------------------------------------------------BRIGHT SECTION------------------------------------------------ */
 .brightSection {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: var(--overlay-part);
+  padding-left: var(--padding-left);
+}
+.arrowWrapper {
+  display: flex;
+  gap: 0.8rem;
+  z-index: 1;
 }
 .tweetTooltip {
   display: flex;
@@ -483,6 +493,23 @@ body {
 }
 .tweetTooltip:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 1024px) {
+  .brightSection {
+    padding-left: 0;
+  }
+  .arrowWrapper {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .brightSection .rightContent .content {
+    padding: var(--padding-left);
+    padding-bottom: 0;
+  }
+  .brightSection .leftContent {
+    padding: var(--padding-left);
+  }
 }
 
 /* ------------------------------------------------MELBOURNE------------------------------------------------------ */
@@ -547,7 +574,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
   .wordSuchContent {
-    width: 90%;
+    width: 80%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -558,7 +585,7 @@ body {
 @media screen and (max-width: 480px) {
   .wordSuchContent {
     position: relative;
-    width: 100%;
+    /* width: 100%; */
   }
   .wordSuchContent .title {
     width: 80%;
@@ -756,6 +783,9 @@ body {
 }
 
 /* ---------------------------------------------LAST SECTION--------------------------------------------------------- */
+.lastSection {
+  margin-top: var(--overlay-part);
+}
 .lastSection .rightContent img {
   height: 50%;
 }
