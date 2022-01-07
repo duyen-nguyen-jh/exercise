@@ -233,12 +233,16 @@ body {
   line-height: 1.53;
 }
 /* ====burger menu==== */
+.headerWrapper {
+  display: none;
+}
 #burgerIcon {
   display: none;
 }
 #toggleHeader {
   display: none;
 }
+/* --------------header with animation-------------- */
 .headerWithLogoWrapper {
   display: flex;
   justify-content: space-between;
@@ -254,23 +258,30 @@ body {
   transition: 0.3s linear;
   box-shadow: -1px 1px 10px gray;
 }
-
-.headerWrapper {
-  display: none;
+.headerBlackMobile {
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.3s linear;
+  box-shadow: -1px 1px 10px gray;
 }
-/* ===icon display=== */
-#mobileLogo {
-  align-self: flex-start;
-  transform: rotate(90deg);
-  width: 20%;
-}
-
 .transLogoRotate {
   transform: rotate(90deg);
   transition: 0.3s linear;
   position: relative;
   top: 60px;
   left: 100px;
+}
+.mobileLogoRotate {
+  transform: rotate(90deg);
+  transition: 0.3s linear;
+  position: relative;
+  top: 10px;
+  left: 30px;
+}
+/* ===icon display=== */
+#mobileLogo {
+  align-self: flex-start;
+  width: 20%;
+  margin-top: 20px;
 }
 #arrow1 {
   color: var(--main-font-color);
@@ -320,12 +331,15 @@ body {
   }
   .heroTextWrapper {
     max-width: 80%;
-
   }
   .headerWrapper {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding: 20px var(--padding-left);
   }
   #toggleHeader {
     position: absolute;
