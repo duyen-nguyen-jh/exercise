@@ -964,4 +964,7 @@ footer {
   .hiddenText {
     width: 100%;
   }
+  .linkWrapper {
+    margin-top: 20px;
+  }
 }
