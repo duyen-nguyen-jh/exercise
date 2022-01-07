@@ -1,11 +1,14 @@
 function onClickBurger() {
   let header = document.getElementById("toggleHeader");
-  document.getElementById("burgerIcon").onclick = function () {
-    if (header.style.display === "none") {
-      header.style.display = "block";
-    } else {
-      header.style.display = "none";
-    }
+  let burger = document.getElementById("burgerIcon");
+  burger.onclick = function () {
+    burger.classList.toggle("open");
+    header.classList.toggle("open");
+    // if (header.style.display === "none" || header.style.display === "") {
+    //   header.style.display = "block";
+    // } else {
+    //   header.style.display = "none";
+    // }
   };
 }
 window.onscroll = function () {
@@ -18,7 +21,7 @@ window.onscroll = function () {
   } else {
     document.getElementById("animatedHeader").classList.remove("headerBlack");
     document.getElementById("transLogoHorizontal").classList.add("transLogoRotate");
-    
+
     document.getElementById("mobileHeader").classList.remove("headerBlackMobile");
     document.getElementById("mobileLogo").classList.add("mobileLogoRotate");
   }
