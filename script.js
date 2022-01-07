@@ -4,11 +4,6 @@ function onClickBurger() {
   burger.onclick = function () {
     burger.classList.toggle("open");
     header.classList.toggle("open");
-    // if (header.style.display === "none" || header.style.display === "") {
-    //   header.style.display = "block";
-    // } else {
-    //   header.style.display = "none";
-    // }
   };
 }
 window.onscroll = function () {

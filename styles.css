@@ -438,6 +438,7 @@ body {
 
     line-height: 4;
     color: var(--main-font-color);
+    text-transform: uppercase;
   }
   #toggleHeader li:last-child {
     border-bottom: none;
