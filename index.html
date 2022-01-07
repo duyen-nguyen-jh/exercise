@@ -16,13 +16,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,26 +41,34 @@
   </head>
   <body>
     <div class="heroWrapper">
-      <ul class="header">
-        <li>about</li>
-        <li>product</li>
-        <li>objects</li>
-        <li>contact</li>
-      </ul>
+      <div class="headerWithLogoWrapper">
+        <ul class="header">
+          <li>about</li>
+          <li>product</li>
+          <li>objects</li>
+          <li>contact</li>
+        </ul>
+        <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogo" />
+      </div>
       <div class="headerWrapper">
-        <i
-          class="fas fa-bars"
+        <span
+          class="iconify-inline"
+          data-icon="akar-icons:three-line-horizontal"
+          style="color: #f26522"
+          data-width="48"
+          data-height="48"
           id="burgerIcon"
-          style="color: #f26522; font-size: x-large; cursor: pointer"
           onclick="onClickBurger()"
-        ></i>
+        ></span>
         <ul id="toggleHeader">
           <li>about</li>
           <li>product</li>
           <li>objects</li>
           <li>contact</li>
         </ul>
+        <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogo" />
       </div>
+
       <div class="heroTextWrapper">
         <p class="heroMainText">SLEEK AS FKUC</p>
         <p class="heroSubText desc">
@@ -75,7 +76,41 @@
           corrupti harum, ipsa ut laboriosam blanditiis eum iste beatae rem, saepe
           quibusdam minus, repellat enim vitae officiis veritatis? Obcaecati, laboriosam.
         </p>
-        <div class="iconWrapper"></div>
+        <div class="iconWrapper">
+          <div class="belowTextIcon">
+            <span
+              class="iconify"
+              data-icon="fluent:line-horizontal-1-20-filled"
+              style="color: white"
+              data-width="24"
+            ></span>
+            <span
+              class="iconify"
+              data-icon="bi:arrow-right"
+              style="color: white"
+              data-width="48"
+            ></span>
+          </div>
+          <span
+            class="iconify-inline"
+            data-icon="fluent:line-horizontal-1-20-filled"
+            style="color: #707070; font-size: 24px"
+          ></span>
+          <div class="arrowWrapper">
+            <span
+              class="iconify-inline"
+              data-icon="bi:arrow-down-circle"
+              data-width="55"
+              id="arrow1"
+            ></span>
+            <span
+              class="iconify-inline"
+              data-icon="bi:arrow-right-circle"
+              data-width="55"
+              id="arrow2"
+            ></span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -94,7 +129,9 @@
           </p>
         </div>
         <div class="rightContent">
-          <img src="./public/images/sub-top.jpg" alt="bight ass orange" />
+          <div class="overlayWrapper">
+            <img src="./public/images/sub-top.png" alt="bight ass orange" />
+          </div>
           <div class="content">
             <p class="title">FINALY A LAYOUT THAT BLOWS YOUR HEAD OFF</p>
             <p class="subTitle desc">
@@ -102,8 +139,16 @@
               tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div class="tweetTooltip">
-              <i class="fab fa-twitter" style="font-size: 1.5rem; color: #d8d8d8"></i>
-              <span style="font-size: 0.75rem; color: #cfcfcf">Tweet this shit</span>
+              <span
+                class="iconify-inline"
+                data-icon="brandico:twitter-bird"
+                style="color: #d8d8d8; font-size: 1.5rem"
+              ></span>
+              <div class="tooltip" style="font-size: 0.75rem; color: #cfcfcf">
+                Tweet this shit
+                <span class="tooltiptext">Tooltip tweet</span>
+              </div>
+              <span></span>
             </div>
           </div>
         </div>
@@ -201,7 +246,12 @@
           <input type="text" placeholder="Name" />
           <input type="text" placeholder="Contact Phone" />
           <input type="text" placeholder="Email" />
-          <button>sign up</button>
+          <button class="animatedBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>sign up
+          </button>
         </div>
       </div>
       <img class="takeActionImg" src="/public/images/take-action.jpg" alt="take-action" />
@@ -220,7 +270,7 @@
             </p>
           </div>
           <div class="rightContent">
-            <img src="./public/images/footer-near.jpg" alt="footer-near" width="100%" />
+            <img src="./public/images/footer-near.png" alt="footer-near" width="100%" />
             <div class="content">
               <p class="title">THE END IS NIGH, WELL THE FOOTER ANYWAYS</p>
               <p class="subTitle desc">
@@ -288,5 +338,11 @@
       </p>
     </footer>
     <script src="script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"
+      integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>

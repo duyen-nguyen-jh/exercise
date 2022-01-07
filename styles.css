@@ -132,7 +132,7 @@ body {
   font-family: "Raleway", "Montserrat", "Open Sans", sans-serif;
   font-size: 16px;
 
-  --hero-height: 120vh;
+  --hero-height: 130vh;
 
   --main-font-color: white;
   --main-orange: #f26522;
@@ -147,12 +147,12 @@ body {
 
   --padding-left: 10%;
   --padding-left-content-float-right: calc(var(--padding-left) / 2);
-  --padding-left-mobile: 10px;
   --title-margin-bottom: 2rem;
   --padding-content-y: 4.25rem;
   --padding-content-x: 3.375rem;
   --padding-content-right-y: 5.0625rem;
   --padding-content-right-x: 3.375rem;
+  --overlay-part: calc(-1.3 * var(--padding-left));
 
   --padding-left-mobile: calc(var(--padding-left) / 3);
 
@@ -176,17 +176,23 @@ body {
     font-size: 12px;
   }
 }
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
 
 /* -------------------------------------------------HERO---------------------------------------------------------- */
 .heroWrapper {
   background: url("/public/images/top.jpg") no-repeat fixed center;
   background-size: cover;
   height: var(--hero-height);
+  position: relative;
 
   color: var(--main-font-color);
 }
 .heroWrapper {
-  padding: 72px var(--padding-left);
+  padding: 72px 0 0 var(--padding-left);
 }
 .header {
   display: flex;
@@ -228,17 +234,66 @@ body {
   font-size: 0.9375rem;
   line-height: 1.53;
 }
+/* ====burger menu==== */
 #burgerIcon {
   display: none;
+}
+#toggleHeader {
+  display: none;
+}
+.headerWithLogoWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+/* ===icon display=== */
+#transLogo {
+  transform: rotate(90deg);
+  align-self: flex-start;
+}
+#arrow1 {
+  color: var(--main-font-color);
+}
+#arrow2 {
+  color: var(--main-orange);
+}
+.arrowWrapper {
+  position: absolute;
+  display: flex;
+  gap: 0.8rem;
+  bottom: calc(-1 * var(--overlay-part) + 3rem);
+}
+.belowTextIcon {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* ----retina screen ------- */
+@media screen and (min-width: 1400px) {
+  .heroWrapper {
+    height: calc(0.85 * var(--hero-height));
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroWrapper {
+    height: calc(0.58 * var(--hero-height));
+  }
 }
 
 @media screen and (max-width: 768px) {
   .heroTextWrapper {
     max-width: 50%;
   }
+  #transLogo {
+    width: 15%;
+  }
 }
 @media screen and (max-width: 480px) {
-  .header {
+  .heroWrapper {
+    height: var(--hero-height);
+  }
+  .headerWithLogoWrapper {
     display: none;
   }
   .heroTextWrapper {
@@ -246,9 +301,8 @@ body {
   }
   .headerWrapper {
     position: relative;
-  }
-  #toggleHeader {
-    display: none;
+    display: flex;
+    justify-content: space-between;
   }
   #toggleHeader li {
     width: 100px;
@@ -262,13 +316,23 @@ body {
   #burgerIcon {
     display: block;
   }
+  #burgerIcon:hover {
+    cursor: pointer;
+  }
+  #transLogo {
+    width: 20%;
+  }
+  #arrow2 {
+    display: none;
+  }
 }
 
 /* -----------------------JOINED PART NICE SECTION AND BRIGHT SECTION------------------------------------------------ */
 .contentWrapper {
   width: 80%;
   display: flex;
-  margin-top: calc(-1.3 * var(--padding-left));
+  margin-top: var(--overlay-part);
+  position: relative;
 }
 .leftContent {
   background-color: var(--main-orange);
@@ -301,7 +365,56 @@ body {
 .rightContent img {
   object-fit: cover;
   width: 100%;
+  display: block;
 }
+.overlayWrapper {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+}
+/* .overlayWrapper::before {
+  content: "";
+  background-color: var(--main-orange);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+} */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
 @media screen and (max-width: 1024px) {
   .contentWrapper {
     width: 90%;
@@ -324,6 +437,15 @@ body {
   .rightContent .content {
     padding: calc(var(--padding-content-right-y) / 2)
       calc(var(--padding-content-right-x) / 2);
+  }
+}
+@media screen and (max-width: 480px) {
+  .rightContent .content {
+    padding: calc(var(--padding-content-right-y) / 2)
+      calc(var(--padding-content-right-x) / 2) 0 calc(var(--padding-content-right-x) / 2);
+  }
+  .rightContent .content .subTitle {
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -421,11 +543,12 @@ body {
     font-size: 3rem;
   }
   .wordSuchContent img {
-    position: absolute;
+    /* position: absolute;
     width: 30%;
     min-width: 20%;
     right: 0;
-    bottom: 0;
+    bottom: 0; */
+    display: none;
   }
 }
 
@@ -455,6 +578,13 @@ body {
   .wordSuchIntro {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    background: var(--main-font-color);
+    padding: var(--padding-left);
+
+    color: var(--sub-color-content);
+  }
+  .toRightSideWrapper {
+    padding-left: 0;
   }
 }
 
@@ -486,19 +616,93 @@ body {
 .takeActionWrapper .formWrapper button {
   height: var(--input-height);
   flex-grow: 1;
+  position: relative;
 
   border: 2px solid var(--main-font-color);
-  background: transparent;
+  background: none;
 
   color: var(--main-font-color);
   text-transform: capitalize;
+
+  transition: color 0.25s linear 0.25s;
 }
 .takeActionWrapper .formWrapper button:hover {
   box-sizing: border-box;
   background: white;
+
   color: var(--gray-70);
   cursor: pointer;
 }
+
+.animatedBtn span {
+  position: absolute;
+  display: block;
+}
+.animatedBtn span:first-child {
+  top: 0;
+  left: 0;
+  background: var(--main-orange);
+
+  width: 0;
+  height: 2px;
+
+  transition: width 0.25s linear;
+}
+.animatedBtn span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  background: var(--main-orange);
+
+  width: 0;
+  height: 2px;
+
+  transition: width 0.25s linear 0.5s;
+}
+.animatedBtn span:nth-child(2) {
+  top: 0;
+  right: 0;
+  background: var(--main-orange);
+
+  width: 2px;
+  height: 0;
+
+  transition: height 0.25s linear 0.25s;
+}
+.animatedBtn span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  background: var(--main-orange);
+
+  width: 2px;
+  height: 0;
+
+  transition: height 0.25s linear 0.75s;
+}
+
+.animatedBtn:hover span:nth-child(odd) {
+  width: 100%;
+}
+.animatedBtn:hover span:nth-child(even) {
+  height: 100%;
+}
+
+.animatedBtn::before {
+  content: "";
+  background: var(--main-orange);
+  width: 0;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  transition: width 0.25s ease-in 1s;
+}
+.animatedBtn:hover::before {
+  width: 100%;
+}
+
 .takeActionImg {
   display: block;
   width: 100%;
@@ -517,6 +721,7 @@ body {
   .takeActionWrapper .formWrapper input,
   .takeActionWrapper .formWrapper button {
     flex-basis: calc(50% - 3rem);
+    height: var(--input-height-mobile);
   }
 }
 
@@ -553,6 +758,9 @@ body {
   .lastSection .contentWrapper {
     margin-top: 0;
   }
+  .lastSection .rightContent .content .subTitle {
+    margin-bottom: 3rem;
+  }
 }
 
 /* ---------------------------------------------FOOTER---------------------------------------------------------------- */
@@ -569,24 +777,26 @@ footer {
 }
 .linkWrapper {
   width: 65%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.linkWrapper ul {
+  flex-grow: 1;
 }
 .linkWrapper ul li:first-child {
   color: var(--main-orange);
   margin-bottom: 1.2rem;
 }
 .hiddenText {
-  max-width: 65%;
+  width: 65%;
   margin-top: calc(var(--padding-left) / 2);
   font-family: "MyriadPro";
   color: var(--gray-56);
 }
 @media screen and (max-width: 480px) {
-  .linkWrapper {
+  .linkWrapper,
+  .hiddenText {
     width: 100%;
-  }
-  .linkWrapper ul:last-child {
   }
 }
