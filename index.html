@@ -48,7 +48,7 @@
           <li>objects</li>
           <li>contact</li>
         </ul>
-        <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogo" />
+        <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogoHorizontal" />
       </div>
       <div class="headerWrapper">
         <span
@@ -66,8 +66,8 @@
           <li>objects</li>
           <li>contact</li>
         </ul>
-        <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogo" />
       </div>
+      <img src="/public/images/HeaderLogo.png" alt="trans" id="transLogo" />
 
       <div class="heroTextWrapper">
         <p class="heroMainText">SLEEK AS FKUC</p>
@@ -344,5 +344,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script>
+      window.onscroll = function () {
+        scroll();
+      };
+
+      function scroll() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+          document.getElementById("transLogoHorizontal").style.display = "block";
+          document.getElementById("transLogo").style.display = "none";
+        } else {
+          document.getElementById("transLogoHorizontal").style.display = "none";
+          document.getElementById("transLogo").style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>
