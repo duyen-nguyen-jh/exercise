@@ -287,13 +287,17 @@ body {
 }
 
 /* ----retina screen ------- */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1401px) {
   .heroWrapper {
     height: calc(0.85 * var(--hero-height));
   }
 }
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1400px) {
+  .heroTextWrapper {
+    padding-top: var(--padding-left);
+  }
+}
+@media screen and (max-width: 1023px) {
   .heroWrapper {
     height: calc(0.58 * var(--hero-height));
   }
@@ -316,6 +320,7 @@ body {
   }
   .heroTextWrapper {
     max-width: 80%;
+
   }
   .headerWrapper {
     position: relative;
@@ -354,7 +359,7 @@ body {
 
 /* -----------------------JOINED PART NICE SECTION AND BRIGHT SECTION------------------------------------------------ */
 .contentWrapper {
-  width: 70%;
+  width: 80%;
   display: flex;
   position: relative;
 }
@@ -439,7 +444,7 @@ body {
   visibility: visible;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .contentWrapper {
     width: 100%;
   }
@@ -453,14 +458,13 @@ body {
   .leftContent {
     width: 100%;
     max-width: 100%;
-    padding: calc(var(--padding-content-y) / 2) calc(var(--padding-content-x) / 2);
+    padding: calc(var(--padding-content-y) / 2) var(--padding-left);
   }
   .rightContent img {
     height: 30%;
   }
   .rightContent .content {
-    padding: calc(var(--padding-content-right-y) / 2)
-      calc(var(--padding-content-right-x) / 2);
+    padding: calc(var(--padding-content-right-y) / 2) var(--padding-left);
   }
 }
 @media screen and (max-width: 480px) {
@@ -494,7 +498,7 @@ body {
 .tweetTooltip:hover {
   cursor: pointer;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .brightSection {
     padding-left: 0;
   }
@@ -572,7 +576,7 @@ body {
   min-width: 50%;
   object-fit: cover;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .wordSuchContent {
     width: 80%;
   }
@@ -757,7 +761,7 @@ body {
   width: 100%;
   object-fit: cover;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .takeActionWrapper .formWrapper {
     width: 100%;
   }
@@ -789,7 +793,7 @@ body {
 .lastSection .rightContent img {
   height: 50%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1023px) {
   .lastSection {
     width: 90%;
   }
