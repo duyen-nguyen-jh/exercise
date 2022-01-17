@@ -128,7 +128,7 @@ input {
   min-width: 0;
 }
 * {
-  /* outline: 1px solid #f00 !important; */
+  /* border: 1px solid #f00 !important; */
   box-sizing: border-box;
 }
 /* ================================================================================================================== */
@@ -162,14 +162,6 @@ body {
   color: var(--text-main-white);
 }
 /* -----------------------------------------HERO1--------------------------------------------------------------------- */
-.heroLeftBar {
-  width: var(--left-bar-mobile-width);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: var(--left-bar-padding);
-  justify-content: space-between;
-}
 .heroWrapper,
 .hero2Wrapper {
   display: flex;
@@ -243,9 +235,6 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  .hero2Wrapper .heroLeftBar {
-    display: block;
-  }
   .heroLeftBar {
     width: var(--left-bar-desktop-width);
   }
@@ -317,6 +306,7 @@ body {
 .scrollItem {
   width: 80%;
   height: 467px;
+  min-width: 276px;
 }
 .imgWrapper {
   width: 100%;
@@ -434,6 +424,10 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .hero2Wrapper .heroLeftBar {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .hero2TextWrapper {
     padding: var(--hero-padding);
   }
@@ -508,7 +502,9 @@ body {
     display: none;
   }
   .leftBar {
-    display: block;
+    display: flex;
+    position: relative;
+    justify-content: center;
     width: var(--left-bar-desktop-width);
   }
   .contentItemWrapper {
@@ -523,6 +519,7 @@ body {
   }
   .flexContainer {
     padding: 30px var(--left-bar-desktop-width);
+    width: calc(100% - var(--left-bar-desktop-width));
   }
 }
 
@@ -649,21 +646,38 @@ body {
 #downIcon {
   display: none;
 }
+
 .heroLeftBar {
+  width: var(--left-bar-mobile-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--left-bar-padding);
+  justify-content: space-between;
   position: relative;
 }
 @media screen and (min-width: 1024px) {
+  .heroLeftBar {
+    width: var(--left-bar-desktop-width);
+  }
   .verticalTxt,
   #downIcon {
     display: block;
   }
   .verticalTxt {
     transform: rotate(270deg);
-    width: 300px;
-    margin-bottom: -200px;
+    width: 200px;
     position: absolute;
     top: 70vh;
 
     font-size: 12px;
+  }
+  .leftBar .verticalTxt {
+    top: 50px;
+    width: 250px;
+  }
+  .january2Content .leftBar .verticalTxt {
+    top: 10px;
+    width: 250px;
   }
 }
