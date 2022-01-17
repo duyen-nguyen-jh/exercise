@@ -349,7 +349,7 @@ body {
 }
 .hero2TextWrapper {
   text-align: center;
-  padding: 80px 50px;
+  padding: 80px var(--left-bar-mobile-width);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -374,7 +374,59 @@ body {
 .desktopCornerTxt {
   align-self: center;
 }
+@media screen and (min-width: 576px) {
+  .hero2Wrapper .title {
+    font-size: 82px;
+    line-height: 62px;
+
+    width: 100%;
+    margin-top: 30vh;
+  }
+
+  .hero2TextWrapper .textInCircle {
+    font-size: 30px;
+
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+
+    border: 5px solid var(--text-main-white);
+    border-radius: 50%;
+  }
+}
 @media screen and (min-width: 768px) {
+  .hero2Wrapper .title {
+    font-size: 132px;
+    line-height: 102px;
+
+    width: 100%;
+    margin-top: 30vh;
+  }
+  .hero2TextWrapper .textInCircle {
+    font-size: 40px;
+
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+
+    border: 7px solid var(--text-main-white);
+    border-radius: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .hero2TextWrapper {
     padding: var(--hero-padding);
   }
@@ -401,30 +453,17 @@ body {
     display: flex;
     justify-content: space-between;
   }
-
-  .hero2TextWrapper .textInCircle {
-    font-size: 40px;
-  
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-  
-    border: 7px solid var(--text-main-white);
-    border-radius: 50%;
-  }
 }
 /* -------------------------------------------------JANUARY CONTENT------------------------------------------------- */
-.januaryContent {
-  display: flex;
+.rightContentWrapper {
+  padding: 60px var(--left-bar-mobile-width) 0 var(--left-bar-mobile-width);
+
+  font-size: 13px;
+  line-height: 25px;
 }
 .januaryContent p {
   width: 100%;
+  margin-bottom: 20px;
 }
 .leftBar {
   display: none;
@@ -432,13 +471,27 @@ body {
 .flexContainer {
   display: flex;
   flex-wrap: wrap;
+  padding: 30px var(--left-bar-mobile-width);
 }
 .contentItemWrapper {
-  width: 50%;
+  width: 100%;
 }
+.titleItem {
+  font-size: 24px;
+  line-height: 54px;
+}
+.contentItem {
+  font-size: 13px;
+  line-height: 15px;
+
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 576px) {
   .januaryContent p {
-    width: 50%;
+    width: calc(50% - 60px);
+    margin-right: 30px;
+    max-width: 700px;
   }
   .fullWidthContent {
     display: none;
@@ -448,7 +501,9 @@ body {
     width: var(--left-bar-desktop-width);
   }
   .contentItemWrapper {
-    width: 279px;
+    min-width: 279px;
+    width: 20%;
+    margin-right: 20px;
   }
 }
 /* -----------------------------------------------------------HERO3------------------------------------------------- */
