@@ -373,24 +373,39 @@ body {
   padding: 20px;
   background: var(--scroll-item-dot-btn-bgr);
 }
-
+@media screen and (min-width: 576px) {
+  .scrollItem {
+    width: calc(100% / 3 - 10px);
+  }
+}
 @media screen and (min-width: 768px) {
   .scrollItem {
     width: calc(100% / 4 - 10px);
   }
 }
-@media screen and (min-width: 576px) {
-  .nextButton,
+@media screen and (min-width: 1024px) {
+  .nextButton {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+  }
   .scrollerTitle {
     display: block;
-  }
-  .scrollItem {
-    width: calc(100% / 3 - 10px);
   }
   .scroller2Wrapper {
     display: flex;
   }
+  .scrollerTitle {
+    padding: 40px 0 0 calc(2 * var(--left-bar-desktop-width));
+    font-size: 18px;
+    line-height: 40px;
+  }
+  .scrollerContainer {
+    width: 90%;
+  }
 }
+
 /* ------------------------------------------------------HERO2------------------------------------------------------ */
 .hero2TextWrapper .title {
   font-size: 52px;
