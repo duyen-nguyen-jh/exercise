@@ -148,10 +148,16 @@ body {
   --text-main-white: #ffffff;
   --footer-title-color: #0d4363;
   --hidden-text-color: #31253f;
+  --scroll-item-title-color: #0c2539;
+  --scroll-item-content-color: #677278;
+  --scroll-item-bgr: white;
+  --scroll-item-dot-btn-bgr: #f5f5f5;
+
   --left-bar-desktop-width: 80px;
   --left-bar-mobile-width: 50px;
   --left-bar-padding: 10px;
   --hero-padding: 30px 60px 60px 80px;
+
   font-family: Montserrat;
 }
 .container {
@@ -302,11 +308,14 @@ body {
 .scroller {
   display: flex;
 }
-
+.scroller {
+  padding: 30px 0;
+}
 .scrollItem {
-  width: 80%;
+  width: 90%;
   height: 467px;
-  min-width: 276px;
+  min-width: 350px;
+  margin: 0 10px;
 }
 .imgWrapper {
   width: 100%;
@@ -318,6 +327,51 @@ body {
 
 .scroller2Wrapper {
   display: none;
+}
+/* ------------------scrollitem--------------------------------- */
+.scrollItemTxt {
+  padding: 35px;
+}
+.heartWrapper {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 75%;
+  right: 20px;
+}
+.imgWrapper {
+  position: relative;
+}
+.itemContentWrapper {
+  background: var(--scroll-item-bgr);
+  color: var(--scroll-item-content-color);
+}
+.itemContentWrapper .title {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.itemContentWrapper .detail {
+  line-height: 2;
+  font-size: 14px;
+}
+
+.itemFooter {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--scroll-item-dot-btn-bgr);
+}
+
+.commentWrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 35px;
+  color: var(--scroll-item-title-color);
+  border-right: 1.5px solid var(--scroll-item-dot-btn-bgr);
+  font-size: 14px;
+}
+.moreDetail {
+  padding: 20px;
+  background: var(--scroll-item-dot-btn-bgr);
 }
 
 @media screen and (min-width: 768px) {
