@@ -166,6 +166,7 @@ body {
   width: 100%;
 
   color: var(--text-main-white);
+  overflow: hidden;
 }
 /* -----------------------------------------HERO1--------------------------------------------------------------------- */
 .heroWrapper,
@@ -310,6 +311,7 @@ body {
 }
 .scroller {
   padding: 30px 0;
+  overflow-x: scroll;
 }
 .scrollItem {
   width: 90%;
