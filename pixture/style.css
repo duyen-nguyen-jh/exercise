@@ -140,8 +140,14 @@ input {
   font-family: MuseoSansRounded-700;
   src: url("./public/font/MuseoSansRounded-700.otf");
 }
+@font-face {
+  font-family: Alerian;
+  src: url("./public/font/AlgerianRegular.ttf");
+}
 body {
   --text-main-white: #ffffff;
+  --footer-title-color: #0d4363;
+  --hidden-text-color: #31253f;
   --left-bar-desktop-width: 80px;
   --left-bar-mobile-width: 50px;
   --left-bar-padding: 10px;
@@ -511,7 +517,7 @@ body {
   background: url("./public/footer-mobile.png") no-repeat center;
   background-size: cover;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -563,23 +569,45 @@ body {
 /* ------------------------------------------------------FOOTER--------------------------------------------------- */
 #footer {
   background-color: #140328;
+  padding: var(--left-bar-mobile-width);
 }
 .footerContentWrapper {
   width: 100%;
+  font-size: 13px;
+  line-height: 26px;
 }
 .footerColWrapper {
   display: flex;
+  margin-bottom: 60px;
 }
 .footerColWrapper .footerCol:last-child {
   display: none;
 }
-
+.footerCol:first-child {
+  width: 40%;
+  margin-right: 30px;
+}
+.colTitle {
+  line-height: 12px;
+  color: var(--footer-title-color);
+  text-transform: uppercase;
+}
+#hiddenText {
+  color: var(--hidden-text-color);
+  font-size: 12px;
+  line-height: 22px;
+  font-family: Alerian;
+}
 @media screen and (min-width: 576px) {
   .footerContentWrapper {
     width: 90%;
   }
   .footerColWrapper .footerCol:last-child {
     display: block;
+  }
+  .colTitle {
+    line-height: 12px;
+    margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -590,5 +618,10 @@ body {
 @media screen and (min-width: 1024px) {
   .footerContentWrapper {
     width: 60%;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .footerCol {
+    min-width: 250px;
   }
 }
