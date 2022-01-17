@@ -127,10 +127,24 @@ table {
 input {
   min-width: 0;
 }
+div {
+  box-sizing: border-box;
+}
 /* ================================================================================================================== */
+@font-face {
+  font-family: MarketOT;
+  src: url("./public/font/market_deco_regular.ttf");
+}
+@font-face {
+  font-family: MuseoSansRounded-700;
+  src: url("./public/font/MuseoSansRounded-700.otf");
+}
 body {
   --text-main-white: #ffffff;
-  --left-bar-mobile-width: 80px;
+  --left-bar-desktop-width: 80px;
+  --left-bar-mobile-width: 50px;
+  --left-bar-padding: 10px;
+  font-family: Montserrat;
 }
 .container {
   background: url("./public/Background.png") no-repeat center center;
@@ -142,28 +156,138 @@ body {
 /* -----------------------------------------HERO1--------------------------------------------------------------------- */
 .heroLeftBar {
   width: var(--left-bar-mobile-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--left-bar-padding);
 }
 .heroWrapper,
 .hero2Wrapper {
   display: flex;
   height: 100vh;
 }
-.hero2Wrapper .heroLeftBar {
-  display: none;
-}
+
 .heroTextWrapper {
   background: url("./public/hero-red.png") no-repeat center center;
   background-size: cover;
   width: 100%;
+  padding: 30px;
+  position: relative;
 }
-
+.heroTextWrapper .title {
+  font-size: 62px;
+  font-weight: bold;
+}
+#emailIcon,
+#dotIcon,
+.desktopTextWrapper {
+  display: none;
+}
 .hero2TextWrapper {
   background: url("./public/hero-purple.png") no-repeat center center;
   background-size: cover;
   width: 100%;
 }
-@media screen and (min-width: 576px) {
+.desktopCornerTxt {
+  display: none;
+}
+
+.hero2Wrapper .heroLeftBar {
+  display: none;
+}
+.subTextWrapper .subTitle {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 17px;
+
+  margin-bottom: 10px;
+}
+.subTextWrapper .subContent {
+  font-size: 11px;
+  line-height: 13px;
+}
+#mobileThreeDots {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.mobileTitle {
+  margin: 40% 0 30px 0;
+}
+@media screen and (min-width: 768px) {
+  .heroTextWrapper .title {
+    font-size: 132px;
+    line-height: 102px;
+  }
+  .subTextWrapper .subTitle {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 25px;
+  
+    margin-bottom: 10px;
+  }
+  .subTextWrapper .subContent {
+    font-size: 13px;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .hero2Wrapper .heroLeftBar {
+    display: block;
+  }
+  .heroLeftBar {
+    width: var(--left-bar-desktop-width);
+  }
+  #emailIcon {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 60px;
+  }
+  .mobileTitle, #mobileThreeDots {
+    display: none;
+  }
+  .heroTextWrapper {
+    padding: 30px 60px 60px 80px;
+  }
+  .desktopTextWrapper {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .desktopTitle {
+    max-width: 50%;
+    text-align: center;
+    position: relative;
+  }
+  .textInCircle {
+    font-size: 40px;
+
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-15deg) translate(-50%);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+
+    border: 7px solid var(--text-main-white);
+    border-radius: 50%;
+  }
+  .subTextWrapper {
+    max-width: 50%;
+  }
+  
+  .desktopCornerTxt {
+    font-size: 13px;
+    display: block;
+  }
+  #dotIcon {
     display: block;
   }
 }
@@ -177,6 +301,7 @@ body {
 .scroller {
   display: flex;
 }
+
 .scrollItem {
   width: 80%;
   height: 467px;
@@ -187,6 +312,10 @@ body {
 .imgWrapper img {
   width: 100%;
   object-fit: contain;
+}
+
+.scroller2Wrapper {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -201,5 +330,87 @@ body {
   }
   .scrollItem {
     width: calc(100% / 3 - 10px);
+  }
+  .scroller2Wrapper {
+    display: flex;
+  }
+}
+/* -------------------------------------------------JANUARY CONTENT------------------------------------------------- */
+.januaryContent {
+  display: flex;
+}
+.januaryContent p {
+  width: 100%;
+}
+.leftBar {
+  display: none;
+}
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contentItemWrapper {
+  width: 50%;
+}
+@media screen and (min-width: 576px) {
+  .januaryContent p {
+    width: 50%;
+  }
+  .fullWidthContent {
+    display: none;
+  }
+  .leftBar {
+    display: block;
+    width: var(--left-bar-desktop-width);
+  }
+  .contentItemWrapper {
+    width: 279px;
+  }
+}
+/* -----------------------------------------------------------HERO3------------------------------------------------- */
+.hero3Wrapper {
+  background: url("./public/footer-mobile.png") no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+
+  color: var(--text-main-white);
+}
+@media screen and (min-width: 768px) {
+  .hero3Wrapper {
+    background: url("./public/footer.png") no-repeat center;
+    background-size: cover;
+  }
+}
+/* ------------------------------------------------------FOOTER--------------------------------------------------- */
+#footer {
+  background-color: #140328;
+}
+.footerContentWrapper {
+  width: 100%;
+}
+.footerColWrapper {
+  display: flex;
+}
+.footerColWrapper .footerCol:last-child {
+  display: none;
+}
+
+@media screen and (min-width: 576px) {
+  .footerContentWrapper {
+    width: 90%;
+  }
+  .footerColWrapper .footerCol:last-child {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footerContentWrapper {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .footerContentWrapper {
+    width: 60%;
   }
 }
