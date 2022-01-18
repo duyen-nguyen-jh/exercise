@@ -88,64 +88,33 @@
       </div>
 
       <div class="scrollerWrapper">
+        <!-- <div class="prevButton" id="prev" onclick="handleClick(-1)">
+          <span
+            class="iconify"
+            data-icon="fa-solid:chevron-left"
+            style="color: white"
+            data-width="24"
+            data-height="42"
+          ></span>
+        </div> -->
+
         <div class="scrollerContainer">
           <p class="scrollerTitle">PICTURES WORTH SEEING</p>
-          <div id="scroller1" class="scroller" style="">
-              <!-- <div class="scrollItem">
-                <div class="imgWrapper">
-                  <img src="./public/item4-img.png" alt="img cover 4" />
-                  <div class="heartWrapper">
-                    <span
-                      class="iconify"
-                      data-icon="clarity:heart-solid"
-                      style="color: white"
-                      data-width="17"
-                      data-height="15"
-                    ></span>
-                    <p style="font-size: 17px; margin-left: 5px">382</p>
-                  </div>
-                </div>
-                <div class="itemContentWrapper">
-                  <div class="scrollItemTxt">
-                    <p class="title">BLISS TEXTURE</p>
-                    <p class="detail">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                      eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                  </div>
-                  <div class="itemFooter">
-                    <div class="commentWrapper">
-                      <span
-                        class="iconify"
-                        data-icon="fa-solid:comment-alt"
-                        style="color: #e5e5e5; margin-right: 5px"
-                        data-width="33"
-                        data-height="29"
-                      ></span>
-                      <p>374 comments</p>
-                    </div>
-                    <div class="moreDetail">
-                      <span
-                        class="iconify"
-                        data-icon="entypo:dots-three-horizontal"
-                        style="color: #0c2539"
-                        data-width="34"
-                        data-height="9"
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
+          <div class="scroller" id="scroller1"></div>
+
+          <div id="desktopList1">
+            <div id="scrollList1"></div>
           </div>
         </div>
 
-        <div class="nextButton">
+        <div class="nextButton" onclick="handleClick(1)">
           <span
             class="iconify"
             data-icon="fa-solid:chevron-right"
             style="color: white"
             data-width="24"
             data-height="42"
+            id="next"
           ></span>
         </div>
       </div>
@@ -227,16 +196,19 @@
       <div class="scroller2Wrapper">
         <div class="scrollerContainer">
           <p class="scrollerTitle">ARTICLES WORTH READING</p>
-          <div class="scroller" id="scroller2"></div>
+          <div id="desktopList2">
+            <div id="scrollList2"></div>
+          </div>
         </div>
 
-        <div class="nextButton">
+        <div class="nextButton" onclick="handleClick2(1)">
           <span
             class="iconify"
             data-icon="fa-solid:chevron-right"
             style="color: white"
             data-width="24"
             data-height="42"
+            id="next2"
           ></span>
         </div>
       </div>

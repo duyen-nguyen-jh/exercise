@@ -6,6 +6,7 @@ const sample = [
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
     comments: 374,
+    index: 1,
   },
   {
     img: "./public/item2-img.png",
@@ -13,6 +14,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 2,
     comments: 374,
   },
   {
@@ -21,6 +23,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 3,
     comments: 374,
   },
   {
@@ -29,6 +32,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 4,
     comments: 374,
   },
   {
@@ -37,6 +41,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 5,
     comments: 374,
   },
   {
@@ -45,6 +50,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 6,
     comments: 374,
   },
   {
@@ -53,6 +59,7 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 7,
     comments: 374,
   },
   {
@@ -61,9 +68,24 @@ const sample = [
     detail:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     like: 383,
+    index: 8,
     comments: 374,
   },
 ];
+
+const list1Wrapper = document.getElementById("scroller1");
+const screenWidth = window.innerWidth;
+list1Wrapper.style.width = `${screenWidth}px`;
+
+const list1Desktop = document.querySelector("#desktopList1 #scrollList1");
+const list2Wrapper = document.querySelector("#desktopList2 #scrollList2");
+
+// const prevBtn = document.getElementById("prev");
+// prevBtn.style.display = "none";
+const nextBtn = document.getElementById("next");
+
+let currIndex = 0;
+let currIndex2 = 0;
 
 function renderScrollItem(data) {
   const { img, title, detail, like, comments } = data;
@@ -113,57 +135,68 @@ function renderScrollItem(data) {
 
   return scrollItem;
 }
-function checkTouchOrClick(e) {
-  return e.changedTouches ? e.changedTouches[0] : e;
-}
 
 function renderListScroller(list) {
-  const list1Wrapper = document.getElementById("scroller1");
-  list.forEach((element) => {
+  list.forEach((element, index) => {
     const item = renderScrollItem(element);
+    // if (index === 0) {
+    //   item.classList.add("current");
+    // }
     list1Wrapper.appendChild(item);
   });
-
-  // let mouseOnScreenPos = null;
-  // const scrollerContainer = document.getElementById("wrappScroll");
-  list1Wrapper.addEventListener("mousedown", function (e) {
-    list1Wrapper.classList.remove("grab");
-    list1Wrapper.classList.add("grabbing");
-    // mouseOnScreenPos = checkTouchOrClick(e).clientX;
-  });
-  list1Wrapper.addEventListener("touchstart", function (e) {
-    list1Wrapper.classList.remove("grab");
-    list1Wrapper.classList.add("grabbing");
-    // mouseOnScreenPos = checkTouchOrClick(e).clientX;
-  });
-
-  list1Wrapper.addEventListener("mouseup", function (e) {
-    list1Wrapper.classList.remove("grabbing");
-    list1Wrapper.classList.add("grab");
-    // if (mouseOnScreenPos || mouseOnScreenPos === 0) {
-    //   const mouseOutScreenPos = checkTouchOrClick(e).clientX;
-    //   const distance = mouseOutScreenPos - mouseOnScreenPos;
-    //   list1Wrapper.style.transform = `translateX(${distance}px)`
-    //   mouseOnScreenPos = null;
-    // }
-  });
-  list1Wrapper.addEventListener("touchend", function (e) {
-    list1Wrapper.classList.remove("grabbing");
-    list1Wrapper.classList.add("grab");
-    // if (mouseOnScreenPos || mouseOnScreenPos === 0) {
-    //   const mouseOutScreenPos = checkTouchOrClick(e).clientX;
-    //   const distance = mouseOutScreenPos - mouseOnScreenPos;
-    //   list1Wrapper.style.transform = `translateX(${distance}px)`
-    //   mouseOnScreenPos = null;
-    // }
+}
+function renderListDesktopScroller1(list) {
+  list.forEach((element) => {
+    const item = renderScrollItem(element);
+    list1Desktop.appendChild(item);
   });
 }
-function renderListScroller2(list) {
-  const list2Wrapper = document.getElementById("scroller2");
+
+function renderListDesktopScroller2(list) {
   list.forEach((element) => {
     const item = renderScrollItem(element);
     list2Wrapper.appendChild(item);
   });
 }
+
+function handleClick(value) {
+  // prevBtn.style.display = "flex";
+  const listScrollItem = document.querySelectorAll(
+    "#desktopList1 #scrollList1 .scrollItem"
+  );
+  const totalItem = listScrollItem.length;
+  currIndex += value;
+  console.log(currIndex);
+
+  // if (currIndex === 1) {
+  //   prevBtn.style.display = "none";
+  // }
+  if (currIndex >= totalItem - 4) {
+    currIndex = 0;
+    return;
+  }
+
+  const transformDistance = currIndex * listScrollItem[0].offsetWidth + 20 * currIndex;
+  list1Desktop.style.transform = `translateX(-${transformDistance}px)`;
+}
+function handleClick2(value) {
+  // prevBtn.style.display = "flex";
+  const listScrollItem = document.querySelectorAll("#scrollList2 .scrollItem");
+  const totalItem = listScrollItem.length;
+  currIndex2 += value;
+  console.log(currIndex2);
+
+  // if (currIndex === 1) {
+  //   prevBtn.style.display = "none";
+  // }
+  if (currIndex2 >= totalItem - 4) {
+    currIndex2 = 0;
+    return;
+  }
+
+  const transformDistance = currIndex2 * listScrollItem[0].offsetWidth + 20 * currIndex2;
+  list2Wrapper.style.transform = `translateX(-${transformDistance}px)`;
+}
 renderListScroller(sample);
-renderListScroller2(sample);
+renderListDesktopScroller1(sample);
+renderListDesktopScroller2(sample);

@@ -308,11 +308,13 @@ body {
 .scrollerWrapper {
   display: flex;
 }
+#desktopList1, #desktopList2 {
+  display: none;
+}
 .scroller {
   padding: 30px 0;
-  overflow-x: scroll;
   scrollbar-width: none;
-  width: 1200px;
+  width: 100%;
   white-space: nowrap;
   margin: 30px 0;
   overflow: auto;
@@ -401,11 +403,27 @@ body {
   }
 }
 @media screen and (min-width: 1024px) {
-  .nextButton {
+  #scroller1 {
+    display: none;
+  }
+  #scrollList1, #scrollList2 {
+    transition: 0.3s linear;
+  }
+  #desktopList1, #desktopList2 {
+    display: block;
+    padding: 30px 0;
+    scrollbar-width: none;
+    white-space: nowrap;
+    margin: 30px 0;
+    overflow: auto;
+    width: 1400px;
+  }
+  .nextButton, .prevButton {
     display: flex;
     width: 10%;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .scrollerTitle {
     display: block;
