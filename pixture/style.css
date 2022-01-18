@@ -305,16 +305,23 @@ body {
 .scrollerTitle {
   display: none;
 }
-.scrollerWrapper,
-.scroller {
+.scrollerWrapper {
   display: flex;
 }
 .scroller {
   padding: 30px 0;
   overflow-x: scroll;
+  scrollbar-width: none;
+  width: 1200px;
+  white-space: nowrap;
+  margin: 30px 0;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 .scrollItem {
-  width: 90%;
+  width: 300px;
   height: 467px;
   min-width: 350px;
   margin: 0 10px;
@@ -326,9 +333,17 @@ body {
   width: 100%;
   object-fit: contain;
 }
-
 .scroller2Wrapper {
   display: none;
+}
+.grab {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+
+.grabbing {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
 }
 /* ------------------scrollitem--------------------------------- */
 .scrollItemTxt {
